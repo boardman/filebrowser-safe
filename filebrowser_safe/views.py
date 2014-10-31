@@ -81,7 +81,6 @@ def browse(request):
     """
     Browse Files/Directories.
     """
-
     # QUERY / PATH CHECK
     query = request.GET.copy()
     path = get_path(query.get('dir', ''))

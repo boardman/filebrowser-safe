@@ -111,9 +111,12 @@ def get_path(path):
     """
     Get Path.
     """
+    # if path.startswith('.') or os.path.isabs(path) or not default_storage.isdir(os.path.join(get_directory(), path)):
+    #     return None
 
-    if path.startswith('.') or os.path.isabs(path) or not default_storage.isdir(os.path.join(get_directory(), path)):
+    if path.startswith('.') or os.path.isabs(path) or default_storage.isdir(os.path.join(get_directory(), path)):
         return None
+
     return path
 
 
