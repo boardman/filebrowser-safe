@@ -86,6 +86,10 @@ def browse(request):
     path = get_path(query.get('dir', ''))
     directory = get_path('')
 
+    # HACK
+    if path is None:
+        path = ''
+
     if path is None:
         msg = _('The requested Folder does not exist.')
         messages.add_message(request, messages.ERROR, msg)
